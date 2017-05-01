@@ -1,7 +1,8 @@
-FROM quay.io/orgsync/base:1.0.0
+FROM quay.io/orgsync/base:1.1.0
 MAINTAINER Joshua Griffith <joshua@orgsync.com>
 
 RUN apt-get update \
+    && apt-get -t jessie-backports install -y libssl-dev \
     && apt-get install -y \
         git \
         autoconf \
